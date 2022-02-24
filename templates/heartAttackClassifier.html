@@ -7,13 +7,13 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 		<title>Heart Attack Prediction</title>
 	</head>
-	<body>
+
+	<body background="https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940.jpg">
 	<!-- Java Script -->	
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-		
 		<!-- Navbar-->
 		<nav class="navbar navbar-dark bg-dark">
 			<span class="navbar-brand mb-0 h1">Heart Attack Prediction</span>
@@ -23,7 +23,7 @@
 			<!--Form-->
 			<form action = "{{url_for('predict')}}" method ="POST" >
 				<fieldset>
-				<legend>Heart Attack Prediction Test Form</legend><br>
+				<legend><b>Please enter the following values</b></legend><br>
 				  <div class="card card-body" >
 					  <div class="form-group  row">
 						<div class="col-sm-3">
@@ -33,7 +33,7 @@
 						<div class="col-sm-3">
 							<label for="sex">Sex</label>
 							<select class="form-control" id="sex"  name="sex" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "0">Female</option>
 							  <option value = "1">Male</option>
 							</select>
@@ -44,7 +44,7 @@
 						  <div class="col-sm">
 							<label for="cp">Chest Pain Type</label>
 							<select class="form-control" id="cp" name = "cp" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "0">Typical Angina</option>
 							  <option value = "1">Atypical Angina</option>
 							  <option value = "2">Non-anginal Pain</option>
@@ -62,7 +62,7 @@
 						  <div class="col-sm">
 							<label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
 							<select class="form-control" id="fbs" name="fbs" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "0">False</option>
 							  <option value = "1">True</option>
 							</select>
@@ -74,7 +74,7 @@
 							<div class="col-sm">
 								<label for="restecg">Resting ECG Results </label>
 								<select class="form-control" id="restecg" name="restecg" required>
-								  <option disabled selected value> -- Select an Option -- </option>
+								  <option disabled selected value> -- Select your choice -- </option>
 								  <option value = "0">Normal</option>
 								  <option value = "1">Having ST-T wave abnormality  </option>
 								  <option value = "2"> Probable or definite left ventricular hypertrophy  </option>
@@ -87,7 +87,7 @@
 							  <div class="col-sm">
 								<label for="exang">Exercise Induced Angina </label>
 								<select class="form-control" id="oldpeak" name="oldpeak" required>
-								  <option disabled selected value> -- Select an Option -- </option>
+								  <option disabled selected value> -- Select your choice -- </option>
 								  <option value = "0">No</option>
 								  <option value = "1">Yes</option>
 								</select>
@@ -102,7 +102,7 @@
 						  <div class="col-sm">
 							<label for="slope">ST Slope </label>
 							<select class="form-control" id="slope" name="slope" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "0">Upsloping</option>
 							  <option value = "1">Flat</option>
 							  <option value = "2">Downsloping</option>
@@ -111,7 +111,7 @@
 						  <div class="col-sm">
 							<label for="ca">Major Vessels</label>
 							<select class="form-control" id="ca" name = "ca" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "0">0</option>
 							  <option value = "1">1</option>
 							  <option value = "2">2</option>
@@ -121,7 +121,7 @@
 						  <div class="col-sm">
 							<label for="thal">Thalassemia</label>
 							<select class="form-control" id="thal" name = "thal" required>
-							  <option disabled selected value> -- Select an Option -- </option>
+							  <option disabled selected value> -- Select your choice -- </option>
 							  <option value = "1">Normal</option>
 							  <option value = "2">Fixed defect</option>
 							  <option value = "3">Reversable defect</option>
@@ -130,12 +130,12 @@
 					  </div>
 					  <br>
 					  <div class="form-group">
-						<input class="btn btn-primary" type="submit" value="Result">
+						<input class="btn btn-dark" type="submit" value="Result">
 					  </div>
 					  
 					  <!--Prediction Result-->
 					  <div id ="result">
-							<strong style="color:red">{{result}}</strong>
+							<strong style="color:blueviolet">{{result}}</strong>
 					 </div>
 				     </div>
 			 </fieldset>
